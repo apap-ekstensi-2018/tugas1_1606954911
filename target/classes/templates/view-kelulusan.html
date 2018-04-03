@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:text="${title}"></title>
+    </head>
+    <body>
+    <div th:replace = "fragments/fragment :: header" ></div>
+    		<div class = "row">
+    		 <div class="col-sm-6">
+            <h3 th:text="'Presentase Kelulusan'"></h3>
+            <table>
+                <tr>
+                    <th>Tahun</th>
+                    <td style="width: 10%;"></td>
+                    <td th:text="${tahun_masuk}"></td>
+                </tr>
+                <tr>
+                    <th>Program Studi</th>
+                    <td style="width: 10%;"></td>
+                    <td th:text="${nama_prodi}"></td>
+                </tr>
+                <tr>
+                    <th>Fakultas</th>
+                    <td style="width: 10%;"></td>
+                    <td th:text="${nama_fakultas}"></td>
+                </tr>
+                <tr>
+                    <th>Universitas</th>
+                    <td style="width: 10%;"></td>
+                    <td th:text="${nama_univ}"></td>
+                </tr>
+                
+    		 </table>
+        </div>
+        
+	        <div class = "col-md-3">
+	        <br/>
+	        <br/>
+	        		<h2 th:text="${hasil}+'%'"></h2>
+	        		<h4 th:text="${hasilLulus}+' dari '+${hasilM}+' Mahasiswa Telah Lulus'"></h4>
+	        </div>
+        </div>
+       
+		
+		<div   th:replace = "fragments/fragment :: footer" ></div>
+       	
+    </body>
+</html>
+

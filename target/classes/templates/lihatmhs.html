@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:text="${title}"></title>
+    </head>
+    <body>
+    <div th:replace = "fragments/fragment :: header" ></div>
+    		
+    		 <div class="col-md-12">
+            <h3 th:text="'Lihat Data Mahasiswa - '+${mahasiswa.npm}"></h3>
+            <table>
+                <tr>
+                    <th>NIK</th>
+                    <td style="width: 10%;"></td>
+                    <td th:text="${mahasiswa.npm}"></td>
+                </tr>
+                <tr>
+                    <th>Nama</th>
+                    <td style="width: 10%;"></td>
+                    <td th:text="${mahasiswa.nama}"></td>
+                </tr>
+                <tr>
+                    <th>Tempat/Tanggal Lahir</th>
+                    <td style="width: 10%;"></td>
+                    <td th:text="${mahasiswa.tempat_lahir}+' / '+${mahasiswa.tanggal_lahir}"></td>
+                </tr>
+                <tr>
+                    <th>Program Studi</th>
+                    <td style="width: 10%;"></td>
+                    <td th:text="${prodi.nama_prodi}"></td>
+                </tr>
+                <tr>
+                    <th>Universitas</th>
+                    <td style="width: 10%;"></td>
+                    <td th:text="${univ.nama_univ}"></td>
+                </tr>
+                <tr>
+                    <th>Jenis Kelamin</th>
+                    <td style="width: 10%;"></td>
+                    <td th:text="${mahasiswa.jenis_kelamin ==1} ? 'Laki-Laki' : 'Perempuan'"></td>
+                </tr>
+                <tr>
+                    <th>Agama</th>
+                    <td style="width: 10%;"></td>
+                    <td th:text="${mahasiswa.agama}"></td>
+                </tr>
+                <tr>
+                    <th>Golongan Darah</th>
+                    <td style="width: 10%;"></td>
+                    <td th:text="${mahasiswa.golongan_darah}"></td>
+                </tr>
+                <tr>
+                    <th>Tahun Masuk</th>
+                    <td style="width: 10%;"></td>
+                    <td th:text="${mahasiswa.tahun_masuk}"></td>
+                </tr>
+                <tr>
+                    <th>Jalur Masuk</th>
+                    <td style="width: 10%;"></td>
+                    <td th:text="${mahasiswa.jalur_masuk}"></td>
+                </tr>
+                <tr>
+                    <th>Status</th>
+                    <td style="width: 10%;"></td>
+                    <td th:text="${mahasiswa.status}"></td>
+					<td>
+								<a th:href="'/mahasiswa/ubah/' + ${mahasiswa.npm}"> 
+									<button type="button" class="btn btn-danger">Update</button>
+								</a>
+					</td>
+                </tr>
+                
+    		 </table>
+        </div>
+		
+		<div   th:replace = "fragments/fragment :: footer" ></div>
+    </body>
+</html>
+

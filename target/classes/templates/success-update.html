@@ -1,0 +1,11 @@
+<html>
+	<head>
+		<title th:text="${title}"></title>
+	</head>
+	<body>
+	<div th:replace = "fragments/fragment :: header" ></div>
+	<h3 th:text="'Data Berhasil diupdate dengan NPM - '+${mahasiswa.npm}"></h3>
+	<div   th:replace = "fragments/fragment :: footer" ></div>
+		
+	</body>
+</html>

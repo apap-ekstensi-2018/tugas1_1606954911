@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<title th:text="${title}"></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+
+<body>
+	
+	<div   th:replace = "fragments/fragment :: header" ></div> 
+	<div class="bs-example">
+	<div class="container">
+	<center><h1 class="page-header" th:text="${title}"></h1></center>
+	
+	
+	<form class="form-horizontal" action="/mahasiswa/cari" method="get">
+	
+		
+		<div class="form-group">
+			<label for="Pilih Universitas">Pilih Universitas</label>
+			<select class="form-control" id="nama_univ" name="univ">
+			    <option th:each="nama : ${universitas}" th:value="${nama.id}" th:text="${nama.nama_univ}"></option>
+			</select>
+			
+			
+		</div>
+		
+		<div class="col-7">
+			<button class="btn btn-success" type="submit">Lihat</button>
+		</div>
+	
+	</form>
+	
+	</div>
+	</div>
+	<div   th:replace = "fragments/fragment :: footer" ></div> 
+	
+</body>
+
+</html>
+
